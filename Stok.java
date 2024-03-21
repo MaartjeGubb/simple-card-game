@@ -1,32 +1,44 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Stok {
-    private List<Kaart> kaartenInStok;
+    private Kaart[] kaartenInStok;
 
-    public private void creeerStok() {
-        kaartenInStok = new ArrayList<>();
+    public Stok() {
+        creeerStok();
+    }
 
+    public Kaart drawCard() {
+        int rand = new Random().nextInt(51);
+        Kaart getrokkenKaart = kaartenInStok[rand];
+        return getrokkenKaart;
+    }
+
+    private void creeerStok() {
         String[] waarde = {
                 "2", "3", "4", "5", "6", "7", "8", "9", "10",
                 "Boer", "Vrouw", "Koning", "Aas"
         };
 
         String[] type = {
-                "harten", "klaveren", "schoppen", "ruiten"
+                "Harten", "Klaveren", "Schoppen", "Ruiten"
         };
 
+        int count = 0;
+        kaartenInStok = new Kaart[waarde.length * type.length];
+        for (int i = 0; i < type.length; i++) {
+            for (int j = 0; j < waarde.length; j++) {
+                kaartenInStok[count] = new Kaart(type[i], waarde[j]);
+                count += 1;
+            }
+        }
+
     }
 
-    public static String drawCard() {
-        Random random = new Random();
-        String kaartWaarde = waarde[random.nextInt(waarde.length)];
-        String kaartType = type[random.nextInt(type.length)];
-
-        Kaart kaart = new Kaart(kaartType, kaartWaarde);
-
-        System.out.println(kaart);
-        return kaartType;
+    public static void main(String[] args) {
+        Stok deck = new Stok();
+        Kaart kaartGetrokken = deck.drawCard();
+        System.out.println(kaartGetrokken.getType());
+        System.out.println(kaartGetrokken.getWaarde());
     }
+
 }
