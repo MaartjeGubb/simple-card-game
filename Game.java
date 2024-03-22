@@ -14,13 +14,12 @@ public class Game {
             Kaart cardP1 = deckP1.drawCard();
             Kaart cardP2 = deckP2.drawCard();
 
-            // vergelijk kaarten op basis van index?
-            if (cardP1.getWaarde() > cardP2.getWaarde()) {
+            if (cardP1.getScore() > cardP2.getScore()) {
                 scoreP1 += 1;
                 continue;
             }
 
-            if (cardP1.getWaarde() < cardP2.getWaarde()) {
+            if (cardP1.getScore() < cardP2.getScore()) {
                 scoreP2 += 1;
                 continue;
             }

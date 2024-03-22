@@ -1,17 +1,19 @@
 public class Kaart {
     private String type;
-    private int waarde;
+    private String waarde;
+    private int score;
 
-    public Kaart(String type, int waarde) {
+    public Kaart(String type, String waarde, int score) {
         this.type = type;
         this.waarde = waarde;
+        this.score = score;
     }
 
-    public int getWaarde() {
+    public String getWaarde() {
         return waarde;
     }
 
-    public void setWaarde(int waarde) {
+    public void setWaarde(String waarde) {
         this.waarde = waarde;
     }
 
@@ -23,4 +25,11 @@ public class Kaart {
         this.type = type;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }

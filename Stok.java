@@ -26,7 +26,12 @@ public class Stok {
 
     private void creeerStok() {
         // WIP even ints van gemaakt voor de eerste versie
-        int[] waarde = {
+        String[] waarde = {
+                "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                "Boer", "Vrouw", "Koning", "Aas"
+        };
+
+        int[] score = {
                 2, 3, 4, 5, 6, 7, 8, 9, 10,
                 11, 12, 13, 14
         };
@@ -38,7 +43,7 @@ public class Stok {
         this.kaarten = new ArrayList<Kaart>();
         for (int i = 0; i < type.length; i++) {
             for (int j = 0; j < waarde.length; j++) {
-                this.kaarten.add(new Kaart(type[i], waarde[j]));
+                this.kaarten.add(new Kaart(type[i], waarde[j], score[j]));
             }
         }
 
