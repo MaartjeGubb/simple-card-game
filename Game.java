@@ -25,6 +25,11 @@ public class Game {
             }
         }
 
+        if (scoreP1 == scoreP2) {
+            System.out.println("The game ended in a draw");
+            return;
+        }
+
         if (scoreP1 > scoreP2) {
             System.out.println("Winner of the cardgame is PLAYER 1!");
             return;
