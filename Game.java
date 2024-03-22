@@ -14,8 +14,6 @@ public class Game {
             Kaart cardP1 = deckP1.drawCard();
             Kaart cardP2 = deckP2.drawCard();
 
-            // wil alleen de kaart in return, en de stok aanpassen van de spelers
-
             // vergelijk kaarten op basis van index?
             if (cardP1.getWaarde() > cardP2.getWaarde()) {
                 scoreP1 += 1;

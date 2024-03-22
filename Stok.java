@@ -1,6 +1,8 @@
-import java.util.Random;
+
+//import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class Stok {
     private List<Kaart> kaarten;
@@ -14,12 +16,10 @@ public class Stok {
         return this.length;
     }
 
-    // Misschien beter om shuffle te doen en dan de bovenste te pakken
-    // length is eigenlijk kaarten.size()??
     public Kaart drawCard() {
-        int rand = new Random().nextInt(this.length);
-        Kaart getrokkenKaart = kaarten.get(rand);
-        kaarten.remove(rand);
+        Collections.shuffle(kaarten);
+        Kaart getrokkenKaart = kaarten.get(0);
+        kaarten.remove(0);
         this.length -= 1;
         return getrokkenKaart;
     }
