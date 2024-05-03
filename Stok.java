@@ -6,26 +6,24 @@ import java.util.Collections;
 
 public class Stok {
     private List<Kaart> kaarten;
-    private int length = 52;
 
     public Stok() {
         creeerStok();
     }
 
     public int getLength() {
-        return this.length;
+        return kaarten.size();
     }
 
     public Kaart drawCard() {
         Collections.shuffle(kaarten);
         Kaart getrokkenKaart = kaarten.get(0);
         kaarten.remove(0);
-        this.length -= 1;
         return getrokkenKaart;
     }
 
+    // maak static: return stok
     private void creeerStok() {
-        // WIP even ints van gemaakt voor de eerste versie
         String[] waarde = {
                 "2", "3", "4", "5", "6", "7", "8", "9", "10",
                 "Boer", "Vrouw", "Koning", "Aas"
@@ -46,6 +44,5 @@ public class Stok {
                 this.kaarten.add(new Kaart(type[i], waarde[j], score[j]));
             }
         }
-
     }
 }

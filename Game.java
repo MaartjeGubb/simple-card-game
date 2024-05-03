@@ -16,11 +16,15 @@ public class Game {
 
             if (cardP1.getScore() > cardP2.getScore()) {
                 scoreP1 += 1;
+                System.out.println("Player 1 won this round");
+                System.out.println(String.format("Score player1, player2: %d:%d", scoreP1, scoreP2));
                 continue;
             }
 
             if (cardP1.getScore() < cardP2.getScore()) {
                 scoreP2 += 1;
+                System.out.println("Player 2 won this round");
+                System.out.println(String.format("Score player1, player2: %d:%d", scoreP1, scoreP2));
                 continue;
             }
         }
