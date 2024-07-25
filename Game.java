@@ -1,18 +1,17 @@
 public class Game {
     public void playGame() {
         // Beide spelers hebben een stok
-        Stok deckP1 = new Stok();
-        Stok deckP2 = new Stok();
+        Stok mainDeck = new Stok();
 
         // Beide spelers hebben puntentelling
         int scoreP1 = 0;
         int scoreP2 = 0;
 
-        while (deckP1.getLength() != 0) {
-
+        while (mainDeck.getLength() != 0) {
+            System.out.println(mainDeck.getLength());
             // Spelers pakken kaart
-            Kaart cardP1 = deckP1.drawCard();
-            Kaart cardP2 = deckP2.drawCard();
+            Kaart cardP1 = mainDeck.drawCard();
+            Kaart cardP2 = mainDeck.drawCard();
 
             if (cardP1.getScore() > cardP2.getScore()) {
                 scoreP1 += 1;
